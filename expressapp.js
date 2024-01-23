@@ -19,8 +19,8 @@ AWS.config.update({
 const s3 = new AWS.S3();
 
 // '/audioFiles/:folderNumber' 경로로 GET 요청이 오면 실행할 함수를 정의합니다.
-app.get('/audioFiles/:folderNumber_mp3', (req, res) => {
-    console.log(req.params.folderNumber);
+app.get('/audioFiles/:folderNumber', (req, res) => {
+    console.log(req.params['folderNumber']);
     const params = {
         Bucket: 'myasmrvoice',
         Prefix: `uploads/${req.params['folderNumber']}_mp3/`
@@ -32,7 +32,7 @@ app.get('/audioFiles/:folderNumber_mp3', (req, res) => {
         } else {
             const audioFiles = data.Contents.map(obj => obj.Key);
             console.log(audioFiles);
-            console.log(folderNumber);
+            console.log(req.params['folderNumber']);
             console.log(req.params.folderNumber);
             res.json(audioFiles);
         }
