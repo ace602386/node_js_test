@@ -20,6 +20,7 @@ const s3 = new AWS.S3();
 
 // '/audioFiles/:folderNumber' 경로로 GET 요청이 오면 실행할 함수를 정의합니다.
 app.get('/audioFiles/:folderNumber', (req, res) => {
+    console.log(req.params.folderNumber);
     const params = {
         Bucket: 'myasmrvoice',
         Prefix: `uploads/${req.params.folderNumber}_mp3/`
