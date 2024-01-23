@@ -23,7 +23,7 @@ app.get('/audioFiles/:folderNumber', (req, res) => {
     console.log(req.params['folderNumber']);
     const params = {
         Bucket: 'myasmrvoice',
-        Prefix: `${req.params['folderNumber']}_mp3/`
+        Prefix: req.params.folderNumber + '_mp3/'
     };
     s3.listObjects(params, function(err, data) {
         if (err) {
