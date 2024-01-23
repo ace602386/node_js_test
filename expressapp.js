@@ -11,8 +11,8 @@ app.use(cors());
 
 // AWS SDK를 설정합니다.
 AWS.config.update({
-    accessKeyId: 'AKIA4MTWIBMIHY4BMFTM',
-    secretAccessKey: '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'
+    accessKeyId: 'AKIA4MTWIBMIPW3VODM7',
+    secretAccessKey: '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'
 });
 
 // S3 서비스 객체를 생성합니다.
