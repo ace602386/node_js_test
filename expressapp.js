@@ -30,9 +30,7 @@ app.get('/audioFiles/:folderNumber', (req, res) => {
             console.error(err, err.stack);
             res.status(500).send('서버에서 오류가 발생했습니다');
         } else {
-            const audioFiles = data.Contents
-                .map(obj => obj.Key)
-                .filter(key => key.endsWith('.mp3')); // 확장자가 .mp3인 파일만 선택
+            const audioFiles = data.Contents.map(obj => obj.Key);
             console.log(audioFiles);
             res.json(audioFiles);
         }
