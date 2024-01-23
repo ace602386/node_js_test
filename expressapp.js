@@ -32,6 +32,7 @@ app.get('/audioFiles/:folderNumber_mp3', (req, res) => {
         } else {
             const audioFiles = data.Contents.map(obj => obj.Key);
             console.log(audioFiles);
+            console.log(folderNumber);
             console.log(req.params.folderNumber);
             res.json(audioFiles);
         }
