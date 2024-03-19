@@ -11,7 +11,7 @@ app.use(cors());
 
 // AWS SDK를 설정합니다.
 AWS.config.update({
-    accessKeyId: 'AKIA4MTWIBMIHY4BMFTM',
+    accessKeyId: '',
     secretAccessKey: ''
 });
 
